@@ -1,2 +1,2 @@
 # SwiftReversePolishNotation
-Swift 3 Concole Reverse Polish Notation algorithm. Works on OSx and Linux
+Swift 3 Concole Reverse Polish Notation algorithm. Works on macOS and Linux
