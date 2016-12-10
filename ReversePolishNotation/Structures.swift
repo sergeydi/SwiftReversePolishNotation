@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Standard Stack algorithm
 public struct Stack {
     fileprivate var array = [String]()
     

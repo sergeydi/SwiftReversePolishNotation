@@ -14,8 +14,10 @@ var outputString = ""
 var stack = Stack()
 let operationsPriority: [String:Int] = ["(":1,")":1, "+":2,"-":2,"*":3,"/":3,"^":5]
 
-// Convert input string to array and read each charecter
+// Convert input string to array
 var stringArray = inputString.components(separatedBy: " ")
+
+// Convert stringArray to Reverse Polish Notation
 for character in stringArray {
     
     switch character {
@@ -41,7 +43,7 @@ for character in stringArray {
     }
 }
 
-// Build output string
+// Build output string with Reverse Polish Notation and remove lat " "
 while !stack.isEmpty {
     if let function = stack.pop() {
         outputString += "\(function) "
@@ -49,7 +51,9 @@ while !stack.isEmpty {
 }
 print(outputString.removeLastChar())
 
+// Convert Reverse Polish Notation string to array
 stringArray = outputString.components(separatedBy: " ")
+// Calculate Reverse Polish Notation array
 for character in stringArray {
     switch character {
     case _ where character.isEqualsToRegexp(regexpPattern: "^[1-9]\\d*\\.?\\d*$"): stack.push(character)
